@@ -49,9 +49,12 @@ int main() {
 
   // TODO: use `polyfit` to fit a third order polynomial to the (x, y)
   // coordinates.
+  Eigen::VectorXd result = polyfit(xvals, yvals, 3);
 
   for (double x = 0; x <= 20; x += 1.0) {
     // TODO: use `polyeval` to evaluate the x values.
+    double eval = polyeval(result, x);
+    std::cout << eval << std::endl; 
   }
 
   // Expected output
